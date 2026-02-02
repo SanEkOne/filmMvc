@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Student> 
+<div class="main">
+    @if (!Model.Any()) 
+    {
+        <div class="alert alert-info">
+            Список пуст.
+        </div>
+    }
+    else 
+    {
+        @foreach (var s in Model)
+        {
+            <div class="film_container">
+                <img class="poster_img" src="@s.Poster" />
+                <div class="info_contsiner">
+                    <h1 class="film_name">@s.Name</h1>
+                    <p>Год выпуска: @s.Year</p>
+                    <p>Жанр: @s.Genre</p>
+                    <p>Описание: @s.Description</p>
+                    <p>Режисер: @s.Director</p>
+                </div>
+            </div>
+            
+        }
+    }
+</div>
